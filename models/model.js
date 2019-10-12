@@ -3,7 +3,7 @@
 const fs = require('fs');
 const util = require('util');
 const uuid = require('uuid/v4');
-// const validator = require('../lib/validator.js');
+const validator = require('../lib/validator.js');
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);

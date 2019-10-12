@@ -3,10 +3,9 @@
 const Teams = require('./models/teams.js');
 const People = require('./models/people.js');
 const Validator = require('./lib/validator.js');
-// const uuidValidate = require('uuid-validate');
+ const uuidValidate = require('uuid-validate');
 
-//.  0.    1.      2.     3
-// node index.js.  ??    ??
+
 let people = new People(process.argv.slice(2)[0]);
 let teams = new Teams(process.argv.slice(3)[0]);
 
