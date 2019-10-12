@@ -3,8 +3,8 @@
 
 * Author: Meron
 Links and Resources
-* ![submission PR](https://github.com/meron-401n14/lab-04/pull/1)
-* ![travis](travis)
+* [submission PR](https://github.com/meron-401n14/lab-04/pull/1)
+* [travis](travis)
 # Documentation
 * [jsdoc]
 * Modules
