@@ -14,8 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "eslint": "^6.5.1",
     "faker": "^4.1.0",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "uuid": "^3.3.3",
     "uuid-validate": "0.0.3"
   }

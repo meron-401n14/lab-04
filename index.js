@@ -11,10 +11,23 @@ let teams = new Teams(process.argv.slice(3)[0]);
 
 async function loadData() {
   let peopleData = await people.load();
+  console.log(peopleData);
   let teamData = await teams.load();
 }
 
+
+
+    
+
 async function createPerson(person) {
+  let team = await findTeam(person.team);
+
+  if (!team.id) {
+    team = await teams.create({ name: person.team });
+  }
+  
+  return await people.create({ ...person, team: team.id });
+  }
   // In order to create a new person
   // check if their team exists
   // if not, create a new team
@@ -22,21 +35,13 @@ async function createPerson(person) {
   // team id created
   // finaly, create this person
 
-  let team = await findTeam(person.team);
-
-  if (!team.id) {
     // should we first validate that:
     // person.team exists
     // person.team is NOT a uuid
-    team = await teams.create({ name: person.team });
 
     // create the team
     // get that new id
     // create person
-  }
-
-  return await people.create({ ...person, team: team.id });
-}
 
 async function findTeam(val) {
   // val can be either id or a string
@@ -48,18 +53,34 @@ async function findTeam(val) {
   if (Validator.isString(val)) result = await teams.read('name', val);
   else if (Validator.isUUID(val)) result = await teams.read('id', val);
 
+  //console.log(result);
   return result;
 }
+
 
 async function readPerson(person) {
   // search
   // go through and read the people database
   // find people that match whatever params this function
   // has
-}
+
+  const data = await response.json()
+
+  data.forEach(person => {
+    Object.entries(person).forEach(([key, value]) =>{
+    console.log(`${key} ${value}`);
+  });
+
+});
+} 
 
 async function updatePerson(id, newPersonData) {
   // call people.update
+  if(team.id !== id){
+    newPersonData = await people.update();
+  }
+
+  console.log(newPersonData);
   // UNLESS
   // did this person change teams?
   // if they did
@@ -82,10 +103,20 @@ async function printTeams() {
 async function runOperations() {
   await loadData();
   await createPerson({
-    firstName: 'Sarah',
-    lastName: 'Smalls',
+    id:uuidValidate(),
+    firstName: 'Meron',
+    lastName: 'Sibani',
     team: 'Yellow Rhino'
   });
+  console.log('hi am here!')
 }
 
+  
+
 runOperations();
+ 
+
+
+  
+
+
