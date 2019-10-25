@@ -96,7 +96,9 @@ class Model {
     if(record.id)
     { this.database = this.database.map((item)=>
       (item.id === id)? record : item)
+      await writeFile(this.database, JSON.stringify(this.database));
       return Promise.resolve(record);
+      
     }
 
     return record;

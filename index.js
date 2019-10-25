@@ -53,7 +53,7 @@ async function findTeam(val) {
   if (Validator.isString(val)) result = await teams.read('name', val);
   else if (Validator.isUUID(val)) result = await teams.read('id', val);
 
-  //console.log(result);
+  console.log(result);
   return result;
 }
 
@@ -63,24 +63,23 @@ async function readPerson(person) {
   // go through and read the people database
   // find people that match whatever params this function
   // has
+  let res = await people.read('firstName', person);
+console.log('my place', res);
 
-  const data = await response.json()
+}
 
-  data.forEach(person => {
-    Object.entries(person).forEach(([key, value]) =>{
-    console.log(`${key} ${value}`);
-  });
 
-});
-} 
 
 async function updatePerson(id, newPersonData) {
   // call people.update
-  if(team.id !== id){
-    newPersonData = await people.update();
+
+  people.update();
+  if(item.id !== team.id) {
+
+  
   }
 
-  console.log(newPersonData);
+  console.log("this is:",  newPersonData);
   // UNLESS
   // did this person change teams?
   // if they did
@@ -108,8 +107,12 @@ async function runOperations() {
     lastName: 'Sibani',
     team: 'Yellow Rhino'
   });
+  await findTeam();
+  await readPerson();
   console.log('hi am here!')
 }
+  
+
 
   
 
