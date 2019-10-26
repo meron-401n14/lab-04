@@ -7,9 +7,16 @@ Links and Resources
 * [travis](travis)
 # Documentation
 * [jsdoc]
-* Modules
+
+## Modules
+* validator.js
+* uuid-validate
+
+
+### Exported Values and Methods
 * model.js
-* Exported Values and Methods
+* people.js
+* team.js
 
 ## Running the app
 * node index.js ./data/person.json ./data/team.js
