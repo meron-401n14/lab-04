@@ -1,0 +1,23 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "players-schema.js",
+  "scripts": {
+    "test": "jest --verbose",
+    "test-watch": "jest --watchAll --verbose"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.5.1",
+    "faker": "^4.1.0",
+    "jest": "^24.9.0",
+    "uuid": "^3.3.3",
+    "uuid-validate": "0.0.3"
+  }
+}
