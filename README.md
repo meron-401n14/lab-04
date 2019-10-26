@@ -22,6 +22,6 @@ Links and Resources
 * node index.js ./data/person.json ./data/team.js
 # Tests
 * npm test
-# What assertions were made? *
-# What assertions need to be / should be made?
+* What assertions were made? *
+* What assertions need to be / should be made?
 # UML
