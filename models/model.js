@@ -66,22 +66,17 @@ class Model {
       return record;
 
     }
-
-    return record;
-
-
-  }
+}
 
   async delete(id) {
-
-    await this.database.forEach(record => {
-      if (record.id === id) map.delete(record);
-      let res = writeFile(this.database, JSON.stringify(this.database));
-      return res;
-    });
-
-
-  }
+   this.database.forEach(item => {
+     if(item.id === id){
+       delete this.data.item;
+     }
+   });
+  await writeFile(this.database, JSON.stringify(this.database));
+      
+}
 
   sanitize(item) {
     let valid = true;

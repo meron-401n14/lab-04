@@ -37,15 +37,16 @@ async function findTeam(val) {
 
 async function readPerson(person) {
   let allPeople = await people.load();
-  let result = {};
-  //console.log(allPeople)
   allPeople.forEach(person => {
-    if (person.firstName === 'firstName') result =
-      ({ 'firstName': person.firstName, 'lastName': person.lastName, 'team': person.team })
-    return result;
+    if (person.firstName==='Meron') 
+    console.log(({ 'firstName': person.firstName, 'lastName': person.lastName, 'team': person.team }))
   });
 
 }
+  
+  
+      
+    
 
 async function updatePerson(id, newPersonData) {
 
